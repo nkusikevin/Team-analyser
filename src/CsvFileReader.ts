@@ -4,8 +4,8 @@ import { MatchResults } from "./MatchResults";
 
 type MatchData = [Date, string, string, number, number, MatchResults, string];
 
-export class CsvFileReader {
-	data: MatchData[] = [];
+export abstract class CsvFileReader<T> {
+	data: T[] = [];
 
 	constructor(public filname: string) {}
 
@@ -21,7 +21,7 @@ export class CsvFileReader {
 			.map(this.mapRow);
 	}
 
-	mapRow(row: string[]): MatchData {
+	mapRow(row: string[]): T {
 		return [
 			dateStringToDate(row[0]),
 			row[1],
