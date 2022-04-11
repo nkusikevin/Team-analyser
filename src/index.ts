@@ -1,4 +1,4 @@
-import { MatchReader } from "./MatchReader";
+import { MatchReader } from "./inheritance/MatchReader";
 import { MatchResults } from "./MatchResults";
 
 
